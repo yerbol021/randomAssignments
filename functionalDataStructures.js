@@ -57,8 +57,10 @@ const listOfBooks = [
 ];
 
 function findLongestBookPublishedBefore(year, books) {
-  const filteredBooks = books.filter(element => elements.year > 1960);
-  console.log(filteredBooks);
-  // const longestBook = filteredBooks.reduce(...);
-  // return { title: longestBook.title, author: longestBook.author }
+  const filteredBooks = books.filter(book => book.published < year);
+  const longestBook = filteredBooks.reduce((previousBook, currentBook) => {
+    return currentBook.pages > previousBook.pages ? currentBook : previousBook;
+  });
+  return { title: longestBook.title, author: longestBook.author };
 }
+console.log(findLongestBookPublishedBefore(1960, listOfBooks))
