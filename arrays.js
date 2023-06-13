@@ -1,7 +1,5 @@
+// Destructuring with Arrays
 const animals= ['labrador', 'tabby', 'parrot'];
-
-const dog= animals[0];
-const cat= animals[1];
-const bird= animals[2];
+const [ dog, cat, bird] = animals;
 
 console.log(dog); // ‘labrador’
